@@ -133,20 +133,12 @@ console.log(z);
     <textarea rows="10" cols="70" placeholder="code goes here"></textarea>
 </div>
 
-<a href="{{site.baseurl}}/cs-portfolio-quest/frontend/submodule_4" 
-   style="display:inline-block; background-color:#1e3a8a; color:white; text-decoration:none; 
-          padding:10px 20px; border-radius:8px; border:none; cursor:pointer; 
-          text-align:center; transition:background-color 0.2s;"
-   onmouseover="this.style.backgroundColor='#1d4ed8'" 
-   onmouseout="this.style.backgroundColor='#1e3a8a'">
-  Previous
-</a>
-<a href="{{site.baseurl}}/cs-portfolio-quest/frontend/submodule_6" 
-   style="display:inline-block; background-color:#1e3a8a; color:white; text-decoration:none; 
-          padding:10px 20px; border-radius:8px; border:none; cursor:pointer; 
-          text-align:center; transition:background-color 0.2s;"
-   onmouseover="this.style.backgroundColor='#1d4ed8'" 
-   onmouseout="this.style.backgroundColor='#1e3a8a'">
-  Next
-</a>
+## If Conditions
 
+If conditions
+
+[Content here]
+
+## Objects
+
+[Content here]
