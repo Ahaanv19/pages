@@ -73,9 +73,9 @@ date: 2025-10-21
       <div class="section">
         <h3>Exercises</h3>
         <div class="exercises">
-          <div class="exercise">1) Write a function <code>sum(a,b)</code> that returns the sum. Log <code>sum(2,3)</code>.</div>
-          <div class="exercise">2) Create a DOM button that increments a counter on-screen.</div>
-          <div class="exercise">3) Given an array, map it to doubled values and log results.</div>
+          <div class="exercise">1) Add a <code>Wire</code> class with initial variables of <code>x0, y0, x1, y1</code>.</div>
+          <div class="exercise">2) Setup the wire class constructor and add <code>this.active = 0</code>.</div>
+          <div class="exercise">3) Add a <code>function attachWire(startX, startY, endX, endY)</code> inside the wire class and set <code>(x0, y0) to (startX, startY)</code>, do the same as well with <code>(x1, y1) and (endX, endY)</code>.</div>
         </div>
       </div>
       <footer>Tip: edit the code on the right and press <strong>Run</strong> to execute.</footer>
@@ -89,36 +89,33 @@ date: 2025-10-21
       </div>
       <div class="editor">
         <textarea id="code">
-            // Start here: try the exercises from the lesson
-            // 1) sum example
-            function sum(a, b) {
-            return a + b;
+            class Wire {
+            constructor(x0, y0, x1, y1) {
+                
             }
-            console.log('sum(2,3)=', sum(2,3));
-            // 2) DOM button example (runs in the iframe):
-            const btn = document.createElement('button');
-            btn.textContent = 'Click me';
-            btn.id = 'demo-btn';
-            btn.style.padding = '8px 12px';
-            document.body.appendChild(btn);
-            let count = 0;
-            btn.addEventListener('click', () => {
-            count++;
-            console.log('button clicked', count);
-            const el = document.getElementById('count');
-            if (el) el.textContent = 'Count: ' + count;
-            });
-            // show a small element for the demo
-            const p = document.createElement('div');
-            p.id = 'count';
-            p.style.marginTop = '12px';
-            p.textContent = 'Count: 0';
-            document.body.appendChild(p);
-            // 3) array map example
-            const arr = [1,2,3,4];
-            console.log('doubled', arr.map(n => n*2));
-            // throw an example error to see error handling
-            // throw new Error('example error');
+
+            attachWire(startX, startY, endX, endY)
+            {
+                
+            }
+
+            getWireInfo() {
+                console.log(this.x0)
+                console.log(this.y0)
+
+                console.log(this.x1)
+                console.log(this.y1)
+            }
+        }
+
+        const wire = new Wire(0, 0, 15, 50);
+
+        wire.getWireInfo();
+
+        wire.attachWire(150, 100, 15, 50);
+
+        console.log("\n");
+        wire.getWireInfo();
         </textarea>
         <div class="output">
           <div style="display:flex;align-items:center;justify-content:space-between">
