@@ -337,7 +337,16 @@ Initial State Button
   <li>Where would you define the order of two separate &lt;p&gt; elements on a page: HTML, CSS, or JavaScript?</li>
   <li>What is the fundamental difference between client-side and server-side code execution?</li>
 </ol>
+<p></p>
 
+<a href="{{site.baseurl}}/cs-portfolio-quest/frontend/" 
+   style="display:inline-block; background-color:#1e3a8a; color:white; text-decoration:none; 
+          padding:10px 20px; border-radius:8px; border:none; cursor:pointer; 
+          text-align:center; transition:background-color 0.2s;"
+   onmouseover="this.style.backgroundColor='#1d4ed8'" 
+   onmouseout="this.style.backgroundColor='#1e3a8a'">
+  Home Page
+</a>
 <a href="{{site.baseurl}}/cs-portfolio-quest/frontend/submodule_2"
    style="display:inline-block; background-color:#1e3a8a; color:white; text-decoration:none;
           padding:10px 20px; border-radius:8px; border:none; cursor:pointer;
@@ -395,7 +404,6 @@ function updateTracker(id, status) {
 }
 
 function applyProgressToUI(state) {
-    // Update feedback text for each checkpoint so the user sees saved state
     if (state[1] === 'completed') {
         const f = document.getElementById('checkpoint1-feedback');
         if (f) { f.textContent = '✅ Completed earlier.'; f.className = 'feedback correct'; }
