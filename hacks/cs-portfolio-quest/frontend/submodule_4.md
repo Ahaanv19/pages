@@ -80,7 +80,7 @@ select {
 
 # SASS
 
-<<<<<<< HEAD
+
 ## Introduction
 
 Modern frontend development offers two powerful styling approaches: **Tailwind CSS** provides utility classes for rapid UI construction, while **Sass** (SCSS syntax) extends CSS with variables, mixins, and partials that compile into standard CSS. This lesson demonstrates how both tools integrate into a Jekyll project. You'll explore a small interactive Tailwind playground and complete a free-response question about choosing between utilities and abstractions.

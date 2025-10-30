@@ -8,7 +8,6 @@ team: "Creators"
 submodule: 5
 microblog: True
 breadcrumb: True
-
 categories: [CSP, Submodule, Frontend]
 tags: [javascript]
 author: "Creators Team"
