@@ -15,152 +15,182 @@ microblog: true
 ---
 
 <style>
-       .css-playground {
-           display: flex;
-           flex-wrap: wrap;
-           gap: 20px;
-           justify-content: center;
-           align-items: flex-start;
-           background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
-           padding: 30px;
-           border-radius: 20px;
-           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-           color: #fff;
-           font-family: "Segoe UI", sans-serif;
-           margin-top: 30px;
-       }
-       .editor-container, .preview-container {
-           flex: 1 1 45%;
-           background: #13284d;
-           border-radius: 15px;
-           padding: 20px;
-           box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-           min-width: 320px;
-       }
-       .editor-container h3,
-       .preview-container h3 {
-           text-align: center;
-           color: #a6c9ff;
-           margin-bottom: 10px;
-           font-weight: 600;
-           letter-spacing: 0.5px;
-       }
-       #synergy-display {
-           width: 100%;
-           min-height: 300px;
-           font-family: "Consolas", "Courier New", monospace;
-           font-size: 15px;
-           background-color: #0e1f3d;
-           color: #e8f0ff;
-           border: 1px solid #355c9b;
-           border-radius: 10px;
-           padding: 15px;
-           resize: vertical;
-           line-height: 1.4;
-       box-sizing: border-box;
-       white-space: pre-wrap;
-       }
-       button {
-           margin-top: 10px;
-           margin-right: 10px;
-           background-color: #1a4c8b;
-           color: #fff;
-           border: none;
-           padding: 10px 16px;
-           border-radius: 8px;
-           cursor: pointer;
-           transition: all 0.3s ease;
-           font-weight: 500;
-       }
-       button:hover {
-           background-color: #2560b3;
-           transform: translateY(-2px);
-       }
-       .preview-container {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: flex-start;
-           overflow: auto;
-       }
-       #css-preview {
-           width: 100%;
-           background: #0e1f3d;
-           border-radius: 10px;
-           padding: 30px;
-           text-align: center;
-           min-height: 250px;
-           color: #e8f0ff;
-           border: 1px solid #355c9b;
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       }
-       button {
-           margin-top: 10px;
-           margin-right: 10px;
-           padding: 10px 16px;
-           border: none;
-           border-radius: 8px;
-           cursor: pointer;
-           transition: all 0.3s ease;
-           font-weight: 500;
-           font-family: "Segoe UI", sans-serif;
-       }
-       button.apply-btn {
-           background-color: #1a73e8;
-           color: #fff;
-       }
-       button.apply-btn:hover {
-           background-color: #2c85f7;
-           transform: translateY(-2px);
-       }
-       button.reset-btn {
-           background-color: #d9534f;
-           color: #fff;
-       }
-
-       button.reset-btn:hover {
-           background-color: #e46863;
-           transform: translateY(-2px);
-       }
-       .checkpoint {
-           background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
-           border-radius: 15px;
-           padding: 25px;
-           color: #eaf0ff;
-           margin: 25px 0;
-           box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-       }
-       .checkpoint h3 {
-           color: #a6c9ff;
-           text-align: center;
-           margin-bottom: 15px;
-       }
-       .checkpoint textarea {
-           width: 100%;
-           background-color: #0e1f3d;
-           color: #e8f0ff;
-           border: 1px solid #355c9b;
-           border-radius: 8px;
-           font-family: "Consolas", monospace;
-           padding: 10px;
-           min-height: 100px;
-       }
-       .feedback {
-           margin-top: 10px;
-           font-weight: 500;
-       }
-       .feedback.correct {
-           color: #28a745;
-       }
-       .feedback.incorrect {
-           color: #dc3545;
-       }
-       #next-link {
-           display: none;
-       }
+    h1, h2, h3 {
+        margin-top: 18px;
+        margin-bottom: 12px;
+        line-height: 1.25;
+        color: #eaf0ff;
+    }
+    p, li, pre, code {
+        margin-bottom: 14px;
+        line-height: 1.75;
+        color: #e8f0ff;
+    }
+    .css-playground {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
+        padding: 20px;
+        border-radius: 12px;
+        color: #fff;
+        font-family: "Segoe UI", sans-serif;
+        margin-top: 24px;
+    }
+    .editor-container, .preview-container {
+        flex: 1 1 45%;
+        background: #13284d;
+        border-radius: 10px;
+        padding: 16px;
+        min-width: 280px;
+    }
+    .editor-container h3,
+    .preview-container h3 {
+        text-align: center;
+        color: #a6c9ff;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    #synergy-display {
+        width: 100%;
+        min-height: 220px;
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 14px;
+        background-color: #0e1f3d;
+        color: #e8f0ff;
+        border: 1px solid #355c9b;
+        border-radius: 8px;
+        padding: 12px;
+        box-sizing: border-box;
+        white-space: pre-wrap;
+    }
+    #css-preview {
+        width: 100%;
+        background: #0e1f3d;
+        border-radius: 10px;
+        padding: 18px;
+        text-align: center;
+        min-height: 200px;
+        color: #e8f0ff;
+        border: 1px solid #355c9b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .checkpoint {
+        background: linear-gradient(135deg, #071428, #0b213a);
+        border-radius: 12px;
+        padding: 18px;
+        color: #eaf0ff;
+        margin: 18px 0;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+        border: 1px solid rgba(80,120,180,0.08);
+    }
+    .checkpoint h3 {
+        color: #a6c9ff;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+    }
+    .checkpoint textarea {
+        width: 100%;
+        background-color: #0e1f3d;
+        color: #e8f0ff;
+        border: 1px solid #27486f;
+        border-radius: 8px;
+        font-family: "Consolas", monospace;
+        padding: 10px;
+        min-height: 110px;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+    .checkpoint label {
+        display: block;
+        background: rgba(255,255,255,0.03);
+        padding: 8px 10px;
+        border-radius: 6px;
+        margin: 6px 0;
+        color: #e8f0ff;
+        cursor: pointer;
+        border: 1px solid rgba(255,255,255,0.02);
+    }
+    .checkpoint input[type="radio"] {
+        margin-right: 8px;
+        transform: translateY(1px);
+    }
+    .checkpoint .actions {
+        margin-top: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    button.apply-btn {
+        background-color: #1a73e8;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 8px;
+        border: 2px solid rgba(255,255,255,0.12);
+        box-shadow: 0 6px 12px rgba(25,80,160,0.12);
+        cursor: pointer;
+        font-weight: 600;
+    }
+    button.apply-btn:hover {
+        background-color: #2c85f7;
+    }
+    button.reset-btn {
+        background-color: transparent;
+        color: #e8f0ff;
+        border: 1px solid rgba(255,255,255,0.06);
+        padding: 8px 14px;
+        border-radius: 8px;
+    }
+    .feedback {
+        margin-top: 8px;
+        font-weight: 600;
+    }
+    .feedback.correct { 
+        color: #28a745; 
+    }
+    .feedback.incorrect { 
+        color: #ff6b6b; 
+    }
+    .cheatsheet {
+        background: linear-gradient(135deg, #0b1a33, #102a4c);
+        padding: 14px;
+        border-radius: 12px;
+        color: #eaf0ff;
+        font-family: 'Segoe UI', sans-serif;
+        margin-top: 22px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+    .cheatsheet h3 { 
+        margin-top: 6px; 
+        margin-bottom: 10px; 
+    }
+    .cheatsheet table th, .cheatsheet table td { 
+        padding: 8px; 
+    }
+    #next-link { 
+        display: none; 
+    }
+    a.lesson-link {
+        display:inline-block;
+        background-color:#1e3a8a;
+        color:white;
+        text-decoration:none;
+        padding:10px 20px;
+        border-radius:8px;
+        border:none;
+        cursor:pointer;
+        text-align:center;
+        transition:background-color 0.15s;
+    }
+    a.lesson-link:hover { 
+        background-color:#1d4ed8; 
+    }
 </style>
 
 <h1>Purpose of Frontend</h1>
@@ -355,139 +385,122 @@ Initial State Button
    onmouseout="this.style.backgroundColor='#1e3a8a'">
   Next
 </a>
-
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('synergy-btn');
-    const message = document.getElementById('synergy-message');
-    let clicks = 0;
-
-    btn.addEventListener('click', () => {
-        clicks++;
-
-        if (clicks % 2 === 1) {
-            btn.style.backgroundColor = '#28a745'; // Green
-            btn.textContent = 'Behavior (JS) & Style (CSS) Changed!';
-            message.textContent = `Button clicked ${clicks} time(s)! State: ACTIVE`;
-        } else {
-            btn.style.backgroundColor = '#1a73e8'; // Blue
-            btn.textContent = 'Initial State Button';
-            message.textContent = `Button clicked ${clicks} time(s)! State: RESET`;
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('synergy-btn');
+        const message = document.getElementById('synergy-message');
+        let clicks = 0;
+        btn.addEventListener('click', () => {
+            clicks++;
+            if (clicks % 2 === 1) {
+                btn.style.backgroundColor = '#28a745'; // Green
+                btn.textContent = 'Behavior (JS) & Style (CSS) Changed!';
+                message.textContent = `Button clicked ${clicks} time(s)! State: ACTIVE`;
+            } else {
+                btn.style.backgroundColor = '#1a73e8'; // Blue
+                btn.textContent = 'Initial State Button';
+                message.textContent = `Button clicked ${clicks} time(s)! State: RESET`;
+            }
+        });
     });
-});
-
-const STORAGE_KEY = 'cs_portfolio_frontend_submodule_1_progress';
-
-function loadProgress() {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : {1: 'incomplete', 2: 'incomplete', 3: 'incomplete', unlocked: false};
-    } catch (e) {
-        return {1: 'incomplete', 2: 'incomplete', 3: 'incomplete', unlocked: false};
+    const STORAGE_KEY = 'cs_portfolio_frontend_submodule_1_progress';
+    function loadProgress() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : {1: 'incomplete', 2: 'incomplete', 3: 'incomplete', unlocked: false};
+        } catch (e) {
+            return {1: 'incomplete', 2: 'incomplete', 3: 'incomplete', unlocked: false};
+        }
     }
-}
-
-function saveProgress(state) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
-
-function updateTracker(id, status) {
-    const state = loadProgress();
-    state[id] = status;
-    // If all checkpoints are completed, mark unlocked
-    if (state[1] === 'completed' && state[2] === 'completed' && state[3] === 'completed') {
-        state.unlocked = true;
-    }
-    saveProgress(state);
-    applyProgressToUI(state);
-}
-
-function applyProgressToUI(state) {
-    if (state[1] === 'completed') {
-        const f = document.getElementById('checkpoint1-feedback');
-        if (f) { f.textContent = '✅ Completed earlier.'; f.className = 'feedback correct'; }
-    }
-    if (state[2] === 'completed') {
-        const f2 = document.getElementById('checkpoint2-feedback');
-        if (f2) { f2.textContent = '✅ Completed earlier.'; f2.className = 'feedback correct'; }
-    }
-    if (state[3] === 'completed') {
-        const f3 = document.getElementById('checkpoint3-feedback');
-        if (f3) { f3.textContent = '✅ Completed earlier.'; f3.className = 'feedback correct'; }
-    }
-    // Show next link if unlocked
-    const next = document.getElementById('next-link');
-    if (state.unlocked && next) {
-        next.style.display = 'inline-block';
-    } else if (next) {
-        next.style.display = 'none';
-    }
-}
-
-function restoreProgress() {
-    const state = loadProgress();
-    applyProgressToUI(state);
-}
-
-// Validation functions
-function validateCheckpoint1() {
-    const input = document.getElementById('checkpoint1-input').value.trim().toLowerCase();
-    const feedback = document.getElementById('checkpoint1-feedback');
-    const correctStructure = input.includes('structure:') && input.includes('behavior:');
-
-    if (!correctStructure) {
-        feedback.textContent = '❌ Try again — format your answer like the example (Structure: [Tech A], Behavior: [Tech B]).';
-        feedback.className = 'feedback incorrect';
-        updateTracker(1, 'failed');
-        return;
-    }
-
-    if (input.includes('html') && (input.includes('javascript') || input.includes('js'))) {
-        feedback.textContent = '✅ Correct! Structure is HTML, and dynamic behavior is JavaScript.';
-        feedback.className = 'feedback correct';
-        updateTracker(1, 'completed');
-    } else {
-        feedback.textContent = '❌ Try again — make sure you correctly identify HTML for structure and JavaScript for behavior.';
-        feedback.className = 'feedback incorrect';
-        updateTracker(1, 'failed');
-    }
-}
-
-function validateCheckpoint2() {
-    const selected = document.querySelector('input[name="q2"]:checked');
-    const feedback = document.getElementById('checkpoint2-feedback');
-    if (!selected) {
-        feedback.textContent = '⚠️ Please select an answer.';
-        feedback.className = 'feedback incorrect';
-        updateTracker(2, 'failed');
-        return;
-    }
-    if (selected.value === 'c') {
-        feedback.textContent = '✅ Correct! The frontend UI code executes in the user&#39;s web browser (Client-Side).';
-        feedback.className = 'feedback correct';
-        updateTracker(2, 'completed');
-    } else {
-        feedback.textContent = '❌ Incorrect. Remember, the UI is what the user directly sees, so it must run locally.';
-        feedback.className = 'feedback incorrect';
-        updateTracker(2, 'failed');
-    }
-}
-
-function validateCheckpoint3() {
-    const input = document.getElementById('checkpoint3-input').value.trim().toLowerCase();
-    const feedback = document.getElementById('checkpoint3-feedback');
-
-    if (input.includes('javascript') || input.includes('js')) {
-        feedback.textContent = '✅ Excellent! JavaScript is responsible for the logic that detects the click and executes the change.';
-        feedback.className = 'feedback correct';
-        updateTracker(3, 'completed');
-    } else {
-        feedback.textContent = '❌ Think about which technology handles actions and logic. (Hint: It starts with "J").';
-        feedback.className = 'feedback incorrect';
-        updateTracker(3, 'failed');
-    }
-}
-
-restoreProgress();
+    function saveProgress(state) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+    function updateTracker(id, status) {
+        const state = loadProgress();
+        state[id] = status;
+        // If all checkpoints are completed, mark unlocked
+        if (state[1] === 'completed' && state[2] === 'completed' && state[3] === 'completed') {
+            state.unlocked = true;
+        }
+        saveProgress(state);
+        applyProgressToUI(state);
+    }
+    function applyProgressToUI(state) {
+        if (state[1] === 'completed') {
+            const f = document.getElementById('checkpoint1-feedback');
+            if (f) { f.textContent = '✅ Completed earlier.'; f.className = 'feedback correct'; }
+        }
+        if (state[2] === 'completed') {
+            const f2 = document.getElementById('checkpoint2-feedback');
+            if (f2) { f2.textContent = '✅ Completed earlier.'; f2.className = 'feedback correct'; }
+        }
+        if (state[3] === 'completed') {
+            const f3 = document.getElementById('checkpoint3-feedback');
+            if (f3) { f3.textContent = '✅ Completed earlier.'; f3.className = 'feedback correct'; }
+        }
+        // Show next link if unlocked
+        const next = document.getElementById('next-link');
+        if (state.unlocked && next) {
+            next.style.display = 'inline-block';
+        } else if (next) {
+            next.style.display = 'none';
+        }
+    }
+    function restoreProgress() {
+        const state = loadProgress();
+        applyProgressToUI(state);
+    }
+    function validateCheckpoint1() {
+        const input = document.getElementById('checkpoint1-input').value.trim().toLowerCase();
+        const feedback = document.getElementById('checkpoint1-feedback');
+        const correctStructure = input.includes('structure:') && input.includes('behavior:');
+        if (!correctStructure) {
+            feedback.textContent = '❌ Try again — format your answer like the example (Structure: [Tech A], Behavior: [Tech B]).';
+            feedback.className = 'feedback incorrect';
+            updateTracker(1, 'failed');
+            return;
+        }
+        if (input.includes('html') && (input.includes('javascript') || input.includes('js'))) {
+            feedback.textContent = '✅ Correct! Structure is HTML, and dynamic behavior is JavaScript.';
+            feedback.className = 'feedback correct';
+            updateTracker(1, 'completed');
+        } else {
+            feedback.textContent = '❌ Try again — make sure you correctly identify HTML for structure and JavaScript for behavior.';
+            feedback.className = 'feedback incorrect';
+            updateTracker(1, 'failed');
+        }
+    }
+    function validateCheckpoint2() {
+        const selected = document.querySelector('input[name="q2"]:checked');
+        const feedback = document.getElementById('checkpoint2-feedback');
+        if (!selected) {
+            feedback.textContent = '⚠️ Please select an answer.';
+            feedback.className = 'feedback incorrect';
+            updateTracker(2, 'failed');
+            return;
+        }
+        if (selected.value === 'c') {
+            feedback.textContent = '✅ Correct! The frontend UI code executes in the user&#39;s web browser (Client-Side).';
+            feedback.className = 'feedback correct';
+            updateTracker(2, 'completed');
+        } else {
+            feedback.textContent = '❌ Incorrect. Remember, the UI is what the user directly sees, so it must run locally.';
+            feedback.className = 'feedback incorrect';
+            updateTracker(2, 'failed');
+        }
+    }
+    function validateCheckpoint3() {
+        const input = document.getElementById('checkpoint3-input').value.trim().toLowerCase();
+        const feedback = document.getElementById('checkpoint3-feedback');
+        if (input.includes('javascript') || input.includes('js')) {
+            feedback.textContent = '✅ Excellent! JavaScript is responsible for the logic that detects the click and executes the change.';
+            feedback.className = 'feedback correct';
+            updateTracker(3, 'completed');
+        } else {
+            feedback.textContent = '❌ Think about which technology handles actions and logic. (Hint: It starts with "J").';
+            feedback.className = 'feedback incorrect';
+            updateTracker(3, 'failed');
+        }
+    }
+    restoreProgress();
 </script>
