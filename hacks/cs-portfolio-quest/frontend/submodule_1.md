@@ -15,215 +15,199 @@ microblog: true
 ---
 
 <style>
-/* ============ CSS Playground Styling (From Module 3) ============ */
-.css-playground {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-    background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-family: "Segoe UI", sans-serif;
-    margin-top: 30px;
-}
+       .css-playground {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 20px;
+           justify-content: center;
+           align-items: flex-start;
+           background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
+           padding: 30px;
+           border-radius: 20px;
+           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+           color: #fff;
+           font-family: "Segoe UI", sans-serif;
+           margin-top: 30px;
+       }
+       .editor-container, .preview-container {
+           flex: 1 1 45%;
+           background: #13284d;
+           border-radius: 15px;
+           padding: 20px;
+           box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+           min-width: 320px;
+       }
+       .editor-container h3,
+       .preview-container h3 {
+           text-align: center;
+           color: #a6c9ff;
+           margin-bottom: 10px;
+           font-weight: 600;
+           letter-spacing: 0.5px;
+       }
+       #synergy-display {
+           width: 100%;
+           min-height: 300px;
+           font-family: "Consolas", "Courier New", monospace;
+           font-size: 15px;
+           background-color: #0e1f3d;
+           color: #e8f0ff;
+           border: 1px solid #355c9b;
+           border-radius: 10px;
+           padding: 15px;
+           resize: vertical;
+           line-height: 1.4;
+       box-sizing: border-box;
+       white-space: pre-wrap;
+       }
+       button {
+           margin-top: 10px;
+           margin-right: 10px;
+           background-color: #1a4c8b;
+           color: #fff;
+           border: none;
+           padding: 10px 16px;
+           border-radius: 8px;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           font-weight: 500;
+       }
+       button:hover {
+           background-color: #2560b3;
+           transform: translateY(-2px);
+       }
+       .preview-container {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: flex-start;
+           overflow: auto;
+       }
+       #css-preview {
+           width: 100%;
+           background: #0e1f3d;
+           border-radius: 10px;
+           padding: 30px;
+           text-align: center;
+           min-height: 250px;
+           color: #e8f0ff;
+           border: 1px solid #355c9b;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       }
+       button {
+           margin-top: 10px;
+           margin-right: 10px;
+           padding: 10px 16px;
+           border: none;
+           border-radius: 8px;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           font-weight: 500;
+           font-family: "Segoe UI", sans-serif;
+       }
+       button.apply-btn {
+           background-color: #1a73e8;
+           color: #fff;
+       }
+       button.apply-btn:hover {
+           background-color: #2c85f7;
+           transform: translateY(-2px);
+       }
+       button.reset-btn {
+           background-color: #d9534f;
+           color: #fff;
+       }
 
-.editor-container, .preview-container {
-    flex: 1 1 45%;
-    background: #13284d;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-    min-width: 320px;
-}
-
-.editor-container h3,
-.preview-container h3 {
-    text-align: center;
-    color: #a6c9ff;
-    margin-bottom: 10px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* Static content area for code breakdown */
-#synergy-display {
-    width: 100%;
-    min-height: 300px;
-    font-family: "Consolas", "Courier New", monospace;
-    font-size: 15px;
-    background-color: #0e1f3d;
-    color: #e8f0ff;
-    border: 1px solid #355c9b;
-    border-radius: 10px;
-    padding: 15px;
-    resize: vertical;
-    line-height: 1.4;
-box-sizing: border-box;
-white-space: pre-wrap;
-}
-
-button {
-    margin-top: 10px;
-    margin-right: 10px;
-    background-color: #1a4c8b;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-button:hover {
-    background-color: #2560b3;
-    transform: translateY(-2px);
-}
-
-.preview-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    overflow: auto;
-}
-
-/* Live running code area */
-#css-preview {
-    width: 100%;
-    background: #0e1f3d;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    min-height: 250px;
-    color: #e8f0ff;
-    border: 1px solid #355c9b;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-
-/* ===== Button Improvements (Copied from Module 3) ===== */
-button {
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    font-family: "Segoe UI", sans-serif;
-}
-
-/* Checkpoint buttons */
-button.apply-btn {
-    background-color: #1a73e8;
-    color: #fff;
-}
-
-button.apply-btn:hover {
-    background-color: #2c85f7;
-    transform: translateY(-2px);
-}
-
-/* Reset CSS button (secondary/danger) - not used in this module's playground */
-button.reset-btn {
-    background-color: #d9534f;
-    color: #fff;
-}
-
-button.reset-btn:hover {
-    background-color: #e46863;
-    transform: translateY(-2px);
-}
-
-/* ===== Checkpoints (Copied from Module 3) ===== */
-.checkpoint {
-    background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
-    border-radius: 15px;
-    padding: 25px;
-    color: #eaf0ff;
-    margin: 25px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-.checkpoint h3 {
-    color: #a6c9ff;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.checkpoint textarea {
-    width: 100%;
-    background-color: #0e1f3d;
-    color: #e8f0ff;
-    border: 1px solid #355c9b;
-    border-radius: 8px;
-    font-family: "Consolas", monospace;
-    padding: 10px;
-    min-height: 100px;
-}
-.feedback {
-    margin-top: 10px;
-    font-weight: 500;
-}
-.feedback.correct {
-    color: #28a745;
-}
-.feedback.incorrect {
-    color: #dc3545;
-}
+       button.reset-btn:hover {
+           background-color: #e46863;
+           transform: translateY(-2px);
+       }
+       .checkpoint {
+           background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340);
+           border-radius: 15px;
+           padding: 25px;
+           color: #eaf0ff;
+           margin: 25px 0;
+           box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+       }
+       .checkpoint h3 {
+           color: #a6c9ff;
+           text-align: center;
+           margin-bottom: 15px;
+       }
+       .checkpoint textarea {
+           width: 100%;
+           background-color: #0e1f3d;
+           color: #e8f0ff;
+           border: 1px solid #355c9b;
+           border-radius: 8px;
+           font-family: "Consolas", monospace;
+           padding: 10px;
+           min-height: 100px;
+       }
+       .feedback {
+           margin-top: 10px;
+           font-weight: 500;
+       }
+       .feedback.correct {
+           color: #28a745;
+       }
+       .feedback.incorrect {
+           color: #dc3545;
+       }
+       #next-link {
+           display: none;
+       }
 </style>
 
-Purpose of Frontend
+<h1>Purpose of Frontend</h1>
 
-Learning Objectives
+<h2>Learning Objectives</h2>
 
 <p>By the end of this foundational module, you will be able to:</p>
 <ul>
-  <li> - Define Frontend Development and its role in a web application.</li>
-  <li> - Identify the three core technologies (HTML, CSS, JS) and their respective functions.</li>
-  <li> - Differentiate between the Client-Side (Frontend) and the Server-Side (Backend).</li>
-  <li> - Explain the concept of synergy between the core technologies.</li>
+  <li>Define Frontend Development and its role in a web application.</li>
+  <li>Identify the three core technologies (HTML, CSS, JS) and their respective functions.</li>
+  <li>Differentiate between the Client-Side (Frontend) and the Server-Side (Backend).</li>
+  <li>Explain the concept of synergy between the core technologies.</li>
 </ul>
 
-Prerequisites
+<h2>Prerequisites</h2>
 
 <ul>
-    <li> - Basic curiosity about how websites work.</li>
-    <li> - Familiarity with web browsers.</li>
-    <li> - No prior coding experience required!</li>
+    <li>Basic curiosity about how websites work.</li>
+    <li>Familiarity with web browsers.</li>
+    <li>No prior coding experience required!</li>
 </ul>
 
-Frontend Basics: The User's World
+<h2>Frontend Basics: The User's World</h2>
 
-Frontend development is the practice of converting data into a graphical interface for users to view and interact with. It is everything a user sees and touches on a website, like buttons, images, text, and layouts. We call it client-side development because the code executes directly in the user's web browser (the client).
+<p>Frontend development is the practice of converting data into a graphical interface for users to view and interact with. It is everything a user sees and touches on a website, like buttons, images, text, and layouts. We call it client-side development because the code executes directly in the user's web browser (the client).</p>
 
-The three essential technologies that make up every modern web page are:
+<p>The three essential technologies that make up every modern web page are:</p>
 
-1. HTML: Structure (The Skeleton)
+<h3>1. HTML: Structure (The Skeleton)</h3>
 
-HTML (HyperText Markup Language) provides the structure and content. It defines elements like headings (<h1>), paragraphs (<p>), lists, and inputs. A website with only HTML is functional but plain.
+<p>HTML (HyperText Markup Language) provides the structure and content. It defines elements like headings (&lt;h1&gt;), paragraphs (&lt;p&gt;), lists, and inputs. A website with only HTML is functional but plain.</p>
 
-HTML Example:
+<p>HTML Example:</p>
 
-<header>
-    <h1>My Website Title</h1>
-</header>
-<p>This is the main content of my page.</p>
+<pre><code>&lt;header&gt;
+    &lt;h1&gt;My Website Title&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;This is the main content of my page.&lt;/p&gt;
+</code></pre>
 
+<h3>2. CSS: Presentation (The Skin and Clothes)</h3>
 
-2. CSS: Presentation (The Skin and Clothes)
+<p>CSS (Cascading Style Sheets) dictates the visual appearance, layout, and styling. It controls colors, fonts, spacing, and how elements are positioned on the page, making the site beautiful and responsive.</p>
 
-CSS (Cascading Style Sheets) dictates the visual appearance, layout, and styling. It controls colors, fonts, spacing, and how elements are positioned on the page, making the site beautiful and responsive.
+<p>CSS Example:</p>
 
-CSS Example:
-
-h1 {
+<pre><code>h1 {
     color: #a6c9ff;
     text-align: center;
 }
@@ -231,73 +215,54 @@ p {
     font-size: 16px;
     margin-top: 20px;
 }
+</code></pre>
 
+<h3>3. JavaScript: Behavior (The Brain and Muscles)</h3>
 
-3. JavaScript: Behavior (The Brain and Muscles)
+<p>JavaScript (JS) is the interactivity and behavior layer. It handles dynamic features, responds to user actions (like button clicks), validates form data, and allows the page to communicate with the server without reloading.</p>
 
-JavaScript (JS) is the interactivity and behavior layer. It handles dynamic features, responds to user actions (like button clicks), validates form data, and allows the page to communicate with the server without reloading.
+<p>JavaScript Example:</p>
 
-JavaScript Example:
-
-document.getElementById('myButton').addEventListener('click', function() {
+<pre><code>document.getElementById('myButton').addEventListener('click', function() {
     alert('Button was clicked!'); // Note: Use message boxes in production, not alert()
 });
-
+</code></pre>
 
 <div id="checkpoint1" class="checkpoint">
   <h3>Checkpoint 1: Core Roles</h3>
   <p>Write the names of the two technologies that provide the structure and the dynamic behavior (interactivity).</p>
   <textarea id="checkpoint1-input" placeholder="e.g., Structure: [Tech A], Behavior: [Tech B]"></textarea>
 
-
-
-
   <button class="apply-btn" onclick="validateCheckpoint1()">Check Answer</button>
   <p id="checkpoint1-feedback" class="feedback"></p>
 </div>
 
-The Full-Stack Context
+<h2>The Full-Stack Context</h2>
 
-Frontend only represents one half of a complete web application.
+<p>Frontend only represents one half of a complete web application.</p>
 
-Client-Side vs. Server-Side
+<h3>Client-Side vs. Server-Side</h3>
 
-Frontend (Client-Side): This is the user interface, running in the user's browser. It focuses on presentation and interaction.
+<p><strong>Frontend (Client-Side):</strong> This is the user interface, running in the user's browser. It focuses on presentation and interaction.</p>
 
-Backend (Server-Side): This is the engine room, running on a remote server. It handles data storage (database), security, user authentication, and complex business logic.
+<p><strong>Backend (Server-Side):</strong> This is the engine room, running on a remote server. It handles data storage (database), security, user authentication, and complex business logic.</p>
 
-The Frontend requests data from the Backend via APIs (Application Programming Interfaces) and then uses HTML, CSS, and JS to display that data to the user.
+<p>The Frontend requests data from the Backend via APIs (Application Programming Interfaces) and then uses HTML, CSS, and JS to display that data to the user.</p>
 
 <div id="checkpoint2" class="checkpoint">
   <h3>Checkpoint 2: Multiple Choice</h3>
   <p>Where does the code responsible for displaying the final visual User Interface (UI) primarily execute?</p>
   <div>
-    <input type="radio" name="q2" value="a"> a) On the backend server's database.
-
-
-
-
-    <input type="radio" name="q2" value="b"> b) In the API endpoints.
-
-
-
-
-    <input type="radio" name="q2" value="c"> c) In the user's web browser.
-
-
-
-
-    <input type="radio" name="q2" value="d"> d) In a separate compilation environment.
-
-
-
-
+    <label><input type="radio" name="q2" value="a"> a. On the backend server's database.</label><br>
+    <label><input type="radio" name="q2" value="b"> b. In the API endpoints.</label><br>
+    <label><input type="radio" name="q2" value="c"> c. In the user's web browser.</label><br>
+    <label><input type="radio" name="q2" value="d"> d. In a separate compilation environment.</label>
   </div>
   <button class="apply-btn" onclick="validateCheckpoint2()">Submit</button>
   <p id="checkpoint2-feedback" class="feedback"></p>
 </div>
 
-Core Components Cheat Sheet
+<h2>Core Components Cheat Sheet</h2>
 
 <p>Understanding these roles is key to debugging and development:</p>
 <div style="background: linear-gradient(135deg, #0b1a33, #102a4c, #0c2340); padding: 25px; border-radius: 15px; color: #eaf0ff; font-family: 'Segoe UI', sans-serif; margin-top: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
@@ -324,16 +289,13 @@ Core Components Cheat Sheet
   <p>When a user clicks a button, and the page changes to dark mode without a page reload, which one technology is responsible for the dark mode switch logic?</p>
   <textarea id="checkpoint3-input" placeholder="Type the name of the technology (e.g., HTML)"></textarea>
 
-
-
-
   <button class="apply-btn" onclick="validateCheckpoint3()">Check Answer</button>
   <p id="checkpoint3-feedback" class="feedback"></p>
 </div>
 
-Interactive Synergy Playground
+<h2>Interactive Synergy Playground</h2>
 
-This playground demonstrates how the three core technologies work together: HTML for the structure, CSS for the style, and JavaScript for the behavior.
+<p>This playground demonstrates how the three core technologies work together: HTML for the structure, CSS for the style, and JavaScript for the behavior.</p>
 
 <div class="css-playground">
     <div class="editor-container">
@@ -365,74 +327,113 @@ Initial State Button
 <p id="synergy-message" style="margin-top: 15px; font-size: 14px; opacity: 0.8;">Click the button to see JavaScript and CSS work together!</p>
         </div>
     </div>
-
 </div>
 
-Practice Challenges
+<h2>Practice Challenges</h2>
 
 <p>To prepare for upcoming modules, consider these questions:</p>
 <ol>
-  <li>1. If a website looks visually broken but all the text and links are present and functional, which core technology is likely malfunctioning?</li>
-  <li>2. Where would you define the order of two separate &lt;p&gt; elements on a page: HTML, CSS, or JavaScript?</li>
-  <li>3. What is the fundamental difference between client-side and server-side code execution?</li>
+  <li>If a website looks visually broken but all the text and links are present and functional, which core technology is likely malfunctioning?</li>
+  <li>Where would you define the order of two separate &lt;p&gt; elements on a page: HTML, CSS, or JavaScript?</li>
+  <li>What is the fundamental difference between client-side and server-side code execution?</li>
 </ol>
 
 <a href="{{site.baseurl}}/cs-portfolio-quest/frontend/submodule_2"
-   style="display:inline-block; background-color:#1e3a8a; color:white; text-decoration:none;
-          padding:10px 20px; border-radius:8px; border:none; cursor:pointer;
-          text-align:center; transition:background-color 0.2s;"
-   onmouseover="this.style.backgroundColor='#1d4ed8'"
-   onmouseout="this.style.backgroundColor='#1e3a8a'">
-  Next
+   style="display:inline-block; background-color:#1e3a8a; color:white; text-decoration:none;
+          padding:10px 20px; border-radius:8px; border:none; cursor:pointer;
+          text-align:center; transition:background-color 0.2s;"
+   onmouseover="this.style.backgroundColor='#1d4ed8'"
+   onmouseout="this.style.backgroundColor='#1e3a8a'">
+  Next
 </a>
 
 <script>
-// Logic for the Live Synergy Demo
 document.addEventListener('DOMContentLoaded', () => {
-const btn = document.getElementById('synergy-btn');
-const message = document.getElementById('synergy-message');
-let clicks = 0;
+    const btn = document.getElementById('synergy-btn');
+    const message = document.getElementById('synergy-message');
+    let clicks = 0;
 
-btn.addEventListener(&#39;click&#39;, () =&gt; {
-    clicks++;
-    
-    if (clicks % 2 === 1) {
-        // JS modifies CSS properties to change the state
-        btn.style.backgroundColor = &#39;#28a745&#39;; // Green
-        btn.textContent = &#39;Behavior (JS) &amp; Style (CSS) Changed!&#39;;
-        message.textContent = `Button clicked ${clicks} time(s)! State: ACTIVE`;
-    } else {
-        // Reset state
-        btn.style.backgroundColor = &#39;#1a73e8&#39;; // Blue
-        btn.textContent = &#39;Initial State Button&#39;;
-        message.textContent = `Button clicked ${clicks} time(s)! State: RESET`;
+    btn.addEventListener('click', () => {
+        clicks++;
+
+        if (clicks % 2 === 1) {
+            btn.style.backgroundColor = '#28a745'; // Green
+            btn.textContent = 'Behavior (JS) & Style (CSS) Changed!';
+            message.textContent = `Button clicked ${clicks} time(s)! State: ACTIVE`;
+        } else {
+            btn.style.backgroundColor = '#1a73e8'; // Blue
+            btn.textContent = 'Initial State Button';
+            message.textContent = `Button clicked ${clicks} time(s)! State: RESET`;
+        }
+    });
+});
+
+const STORAGE_KEY = 'cs_portfolio_frontend_submodule_1_progress';
+
+function loadProgress() {
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {1: 'incomplete', 2: 'incomplete', 3: 'incomplete', unlocked: false};
+    } catch (e) {
+        return {1: 'incomplete', 2: 'incomplete', 3: 'incomplete', unlocked: false};
     }
-});
+}
 
-
-});
-
-/* ====== Checkpoint Logic (ADAPTED FOR MODULE 1) ====== */
+function saveProgress(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
 
 function updateTracker(id, status) {
-    // Update logic (simplified for immediate feedback)
+    const state = loadProgress();
+    state[id] = status;
+    // If all checkpoints are completed, mark unlocked
+    if (state[1] === 'completed' && state[2] === 'completed' && state[3] === 'completed') {
+        state.unlocked = true;
+    }
+    saveProgress(state);
+    applyProgressToUI(state);
+}
+
+function applyProgressToUI(state) {
+    // Update feedback text for each checkpoint so the user sees saved state
+    if (state[1] === 'completed') {
+        const f = document.getElementById('checkpoint1-feedback');
+        if (f) { f.textContent = '✅ Completed earlier.'; f.className = 'feedback correct'; }
+    }
+    if (state[2] === 'completed') {
+        const f2 = document.getElementById('checkpoint2-feedback');
+        if (f2) { f2.textContent = '✅ Completed earlier.'; f2.className = 'feedback correct'; }
+    }
+    if (state[3] === 'completed') {
+        const f3 = document.getElementById('checkpoint3-feedback');
+        if (f3) { f3.textContent = '✅ Completed earlier.'; f3.className = 'feedback correct'; }
+    }
+    // Show next link if unlocked
+    const next = document.getElementById('next-link');
+    if (state.unlocked && next) {
+        next.style.display = 'inline-block';
+    } else if (next) {
+        next.style.display = 'none';
+    }
 }
 
 function restoreProgress() {
-// Progress restoration logic removed for simplicity
+    const state = loadProgress();
+    applyProgressToUI(state);
 }
 
 // Validation functions
 function validateCheckpoint1() {
     const input = document.getElementById('checkpoint1-input').value.trim().toLowerCase();
     const feedback = document.getElementById('checkpoint1-feedback');
-const correctStructure = input.includes('structure:') && input.includes('behavior:');
-   
+    const correctStructure = input.includes('structure:') && input.includes('behavior:');
+
     if (!correctStructure) {
-feedback.textContent = '❌ Try again — format your answer like the example (Structure: [Tech A], Behavior: [Tech B]).';
+        feedback.textContent = '❌ Try again — format your answer like the example (Structure: [Tech A], Behavior: [Tech B]).';
         feedback.className = 'feedback incorrect';
+        updateTracker(1, 'failed');
         return;
-}
+    }
 
     if (input.includes('html') && (input.includes('javascript') || input.includes('js'))) {
         feedback.textContent = '✅ Correct! Structure is HTML, and dynamic behavior is JavaScript.';
@@ -451,6 +452,7 @@ function validateCheckpoint2() {
     if (!selected) {
         feedback.textContent = '⚠️ Please select an answer.';
         feedback.className = 'feedback incorrect';
+        updateTracker(2, 'failed');
         return;
     }
     if (selected.value === 'c') {
