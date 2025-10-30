@@ -80,7 +80,6 @@ select {
 
 # SASS
 
-
 ## Introduction
 
 Modern frontend development offers two powerful styling approaches: **Tailwind CSS** provides utility classes for rapid UI construction, while **Sass** (SCSS syntax) extends CSS with variables, mixins, and partials that compile into standard CSS. This lesson demonstrates how both tools integrate into a Jekyll project. You'll explore a small interactive Tailwind playground and complete a free-response question about choosing between utilities and abstractions.
@@ -303,15 +302,15 @@ Yes. Use Tailwind for component utilities and Sass for global styles, theme vari
 
         if (res.ok) {
           const data = await res.json();
-          messageDiv.textContent = `✅ Response saved! (ID: ${data.id})`;
+          messageDiv.textContent = `Response saved! (ID: ${data.id})`;
           messageDiv.style.color = "green";
           responseInput.value = "";
         } else {
-          messageDiv.textContent = "⚠️ Error submitting response.";
+          messageDiv.textContent = "Error submitting response.";
           messageDiv.style.color = "red";
         }
       } catch (err) {
-        messageDiv.textContent = "❌ Could not connect to server.";
+        messageDiv.textContent = "Could not connect to server.";
         messageDiv.style.color = "red";
       }
     });
