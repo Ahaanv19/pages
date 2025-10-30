@@ -17,7 +17,7 @@ lxdData:
       Categories: ["Frontend", "HTML", "CSS", "Javascript"]
       Video: "/cs-portfolio-quest/frontend/submodule_1-video"
       Lessons: "/cs-portfolio-quest/frontend/submodule_1/"
-      Image: "/images/cs-portfolio-quest/frontend.svg"
+      Image: "/images/introfrontend.png"
       Alt: "Frontend Submodule 1"
     - Title: "Submodule 2"
       Genre: "Project Creation"
@@ -26,7 +26,7 @@ lxdData:
       Categories: ["Frontend", "HTML", "CSS", "Javascript"]
       Video: "/cs-portfolio-quest/frontend/submodule_2-video"
       Lessons: "/cs-portfolio-quest/frontend/submodule_2/"
-      Image: "/images/cs-portfolio-quest/frontend.svg"
+      Image: "/images/fullstack.png"
       Alt: "Frontend Submodule 2"
     - Title: "Submodule 3"
       Genre: "Project Creation"
@@ -35,7 +35,7 @@ lxdData:
       Categories: ["Frontend", "HTML", "CSS", "Javascript"]
       Video: "/cs-portfolio-quest/frontend/submodule_3-video"
       Lessons: "/cs-portfolio-quest/frontend/submodule_3/"
-      Image: "/images/cs-portfolio-quest/frontend.svg"
+      Image: "/images/css.png"
       Alt: "Frontend Submodule 3"
     - Title: "Submodule 4"
       Genre: "Project Creation"
@@ -44,7 +44,7 @@ lxdData:
       Categories: ["Frontend", "HTML", "CSS", "Javascript"]
       Video: "/cs-portfolio-quest/frontend/submodule_4-video"
       Lessons: "/cs-portfolio-quest/frontend/submodule_4/"
-      Image: "/images/cs-portfolio-quest/frontend.svg"
+      Image: "/images/tailwind.png"
       Alt: "Frontend Submodule 4"
     - Title: "Submodule 5"
       Genre: "Project Creation"
@@ -53,7 +53,7 @@ lxdData:
       Categories: ["Frontend", "HTML", "CSS", "Javascript"]
       Video: "/cs-portfolio-quest/frontend/submodule_5-video"
       Lessons: "/cs-portfolio-quest/frontend/submodule_5/"
-      Image: "/images/cs-portfolio-quest/frontend.svg"
+      Image: "/images/javascript.png"
       Alt: "Frontend Submodule 5"
     - Title: "Submodule 6"
       Genre: "Project Creation"
@@ -62,7 +62,7 @@ lxdData:
       Categories: ["Frontend", "HTML", "CSS", "Javascript"]
       Video: "/cs-portfolio-quest/frontend/submodule_6-video"
       Lessons: "/cs-portfolio-quest/frontend/submodule_6/"
-      Image: "/images/cs-portfolio-quest/frontend.svg"
+      Image: "/images/integration.png"
       Alt: "Frontend Submodule 6"
 ---
 
