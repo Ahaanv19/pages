@@ -8,7 +8,6 @@ team: "Creators"
 submodule: 5
 microblog: True
 breadcrumb: True
-
 categories: [CSP, Submodule, Frontend]
 tags: [javascript]
 author: "Creators Team"
@@ -150,3 +149,4 @@ console.log(z);
    onmouseout="this.style.backgroundColor='#1e3a8a'">
   Next
 </a>
+
